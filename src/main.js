@@ -3,8 +3,16 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import hotcss from '@/assets/js/hotcss.js'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'styles/reset.scss'
+import 'styles/layout.scss'
+import 'styles/element.scss'
+import 'swiper/dist/css/swiper.css'
 
 Vue.config.productionTip = false
+Vue.use(VueAwesomeSwiper)
+Vue.use(hotcss)
 
 /* eslint-disable no-new */
 new Vue({
