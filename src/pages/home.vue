@@ -1,11 +1,13 @@
 <template>
   <div class="home">
     <home-header></home-header>
+    <home-slider></home-slider>
   </div>
 </template>
 
 <script>
 import homeHeader from '@/public/header'
+import homeSlider from '@/pages/home/hslider'
 export default {
   name: 'home',
   data () {
@@ -14,10 +16,11 @@ export default {
     }
   },
   components: {
-    homeHeader
+    homeHeader,
+    homeSlider
   }
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" module>
 </style>

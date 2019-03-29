@@ -1,23 +1,18 @@
 <template>
   <section :class="cname">
-    <swiper :options="options"
-            :not-next-tick="options.notNextTick"
-            ref="swiper">
-      <swiper-slide v-for="item of items"
-                    :key="item.href">
-        <router-link :to="item.href">
-          <img :src="item.src"
-               alt="">
+    <swiper :options="options" :not-next-tick="options.notNextTick">
+      <swiper-slide v-for="item in items" :key="item.src">
+        <router-link :to="{ name: item.href}">
+          <img :src="item.src" alt="">
         </router-link>
       </swiper-slide>
-      <div class="swiper-pagination"
-           v-if="options.pagination"></div>
+      <div class="swiper-pagination" v-if="options.pagination" slot="pagination" />
     </swiper>
   </section>
 </template>
 <script>
 export default {
-  name: 'swiper',
+  name: 'slider',
   props: {
     cname: {
       type: String,
@@ -39,11 +34,11 @@ export default {
     items: {
       type: Array,
       default () {
-        reutrn[]
+        return []
       }
     }
   }
 }
 </script>
-<style lang="scss" scoped>
+<style lang="scss" module>
 </style>
